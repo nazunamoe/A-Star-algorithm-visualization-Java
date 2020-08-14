@@ -31,7 +31,7 @@ public class Intro extends JFrame {
 			File sourceimage = new File("src/overwatch.png");
 			img = ImageIO.read(sourceimage);
 		} catch (IOException e) {
-			System.out.println("이미지파일이 없습니다.");
+			System.out.println("Image file does not exist.");
 		} // 오버워치 로고 불러오는 부분
 		setIconImage(img);
 
@@ -44,13 +44,13 @@ public class Intro extends JFrame {
 		setTitle("A * Algorithm");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-		JButton Open = new JButton("맵 열기");
-		JButton Exit = new JButton("종료");
+		JButton Open = new JButton("Open map");
+		JButton Exit = new JButton("Exit");
 		Open.setFont(sub);
 		Exit.setFont(sub);
 
-		Open.setSize(100, 50);
-		Open.setLocation(30, 40);
+		Open.setSize(120, 50);
+		Open.setLocation(20, 40);
 
 		Exit.setSize(100, 50);
 		Exit.setLocation(160, 40);

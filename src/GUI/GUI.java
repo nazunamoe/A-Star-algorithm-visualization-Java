@@ -38,7 +38,7 @@ public class GUI extends JFrame {
 			File sourceimage = new File("src/overwatch.png");
 			img = ImageIO.read(sourceimage);
 		} catch (IOException e) {
-			System.out.println("이미지파일이 없습니다.");
+			System.out.println("Image file does not exist.");
 		} // 오버워치 로고 불러오는 부분
 		setIconImage(img);
 
@@ -206,61 +206,61 @@ public class GUI extends JFrame {
 						for (int i = 0; i < buttons_BUI.length; i++) {
 							if (a.getSource() == buttons_BUI[i]) { // Mode변수를 이용하여 편집기의 모드를 조정하거나 빠져나갈 수 있음
 								switch (buttons_BUI[i].getText()) {
-								case "출발점 지정": {
+								case "Specify a starting point": {
 									MapEnable();
-									buttons_BUI[0].setText("출발점 지정 종료");
+									buttons_BUI[0].setText("End of Start Point Designation");
 									buttons_BUI[1].setEnabled(false);
 									buttons_BUI[2].setEnabled(false);
 									buttons_BUI[3].setEnabled(false);
 									Mode = 1;
 									break;
 								}
-								case "출발점 지정 종료": {
+								case "End of Start Point Designation": {
 									MapDisable();
-									buttons_BUI[0].setText("출발점 지정");
+									buttons_BUI[0].setText("Specify a starting point");
 									buttons_BUI[1].setEnabled(true);
 									buttons_BUI[2].setEnabled(true);
 									buttons_BUI[3].setEnabled(true);
 									Mode = 0;
 									break;
 								}
-								case "도착점 지정": {
+								case "Specify a end point": {
 									MapEnable();
-									buttons_BUI[1].setText("도착점 지정 종료");
+									buttons_BUI[1].setText("End of destination designation");
 									buttons_BUI[0].setEnabled(false);
 									buttons_BUI[2].setEnabled(false);
 									buttons_BUI[3].setEnabled(false);
 									Mode = 2;
 									break;
 								}
-								case "도착점 지정 종료": {
+								case "End of destination designation": {
 									MapDisable();
-									buttons_BUI[1].setText("도착점 지정");
+									buttons_BUI[1].setText("Specify a end point");
 									buttons_BUI[0].setEnabled(true);
 									buttons_BUI[2].setEnabled(true);
 									buttons_BUI[3].setEnabled(true);
 									Mode = 0;
 									break;
 								}
-								case "장애물 지정": {
+								case "Wall designation": {
 									MapEnable();
-									buttons_BUI[2].setText("장애물 지정 종료");
+									buttons_BUI[2].setText("End wall designation");
 									buttons_BUI[0].setEnabled(false);
 									buttons_BUI[1].setEnabled(false);
 									buttons_BUI[3].setEnabled(false);
 									Mode = 3;
 									break;
 								}
-								case "장애물 지정 종료": {
+								case "End wall designation": {
 									MapDisable();
-									buttons_BUI[2].setText("장애물 지정");
+									buttons_BUI[2].setText("Wall designation");
 									buttons_BUI[0].setEnabled(true);
 									buttons_BUI[1].setEnabled(true);
 									buttons_BUI[3].setEnabled(true);
 									Mode = 0;
 									break;
 								}
-								case "편집기 시작": {
+								case "Start the editor": {
 									refreshButtion();
 									convertMap();
 									refreshButtion();
@@ -268,20 +268,20 @@ public class GUI extends JFrame {
 									for (int x = 0; x < 3; x++) {
 										buttons_BUI[x].setEnabled(true);
 									}
-									buttons_BUI[3].setText("편집기 종료");
+									buttons_BUI[3].setText("Exit the editor");
 									Mode = 0;
 									break;
 								}
-								case "편집기 종료": {
+								case "Exit the editor": {
 									convertMap();
 									buttons_BUI2[1].setEnabled(true);
 									for (int x = 0; x < 3; x++) {
 										buttons_BUI[x].setEnabled(false);
 									}
-									buttons_BUI[3].setText("편집기 시작");
-									buttons_BUI[0].setText("출발점 지정");
-									buttons_BUI[1].setText("도착점 지정");
-									buttons_BUI[2].setText("장애물 지정");
+									buttons_BUI[0].setText("Specify a starting point");
+									buttons_BUI[1].setText("Specify a end point");
+									buttons_BUI[2].setText("Wall designation");
+									buttons_BUI[3].setText("Start the editor");
 									Mode = 0;
 									break;
 								}
@@ -293,10 +293,10 @@ public class GUI extends JFrame {
 				buttons_BUI[i].setBackground(Color.GRAY);
 				add(buttons_BUI[i]);
 			}
-			buttons_BUI[0].setText("출발점 지정");
-			buttons_BUI[1].setText("도착점 지정");
-			buttons_BUI[2].setText("장애물 지정");
-			buttons_BUI[3].setText("편집기 시작");
+			buttons_BUI[0].setText("Specify a starting point");
+			buttons_BUI[1].setText("Specify a end point");
+			buttons_BUI[2].setText("Wall designation");
+			buttons_BUI[3].setText("Start the editor");
 			for (int x = 0; x <= 3; x++) {
 				buttons_BUI[x].setEnabled(false);
 			}
@@ -328,8 +328,8 @@ public class GUI extends JFrame {
 			Font sub = new Font("맑은 고딕", Font.BOLD, 12);
 			Container M = getContentPane();
 			setResizable(false);
-			JLabel speedtitle = new JLabel("속도");
-			JButton speedok = new JButton("속도 적용");
+			JLabel speedtitle = new JLabel("Speed");
+			JButton speedok = new JButton("Apply");
 			speedtitle.setFont(sub);
 			speedok.setFont(sub);
 			
@@ -346,7 +346,7 @@ public class GUI extends JFrame {
 			speedok.setFocusPainted(false);
 			speedok.setContentAreaFilled(false);
 			speed.setLocation((int) ((M.getSize().height) * (0.84)) + 35, 210);
-			speedtitle.setLocation((int) ((M.getSize().height) * (0.84)), 210);
+			speedtitle.setLocation((int) ((M.getSize().height) * (0.84)) - 10, 210);
 			speedok.setLocation((int) ((M.getSize().height) * (0.84)) - 5, 235);
 			speed.setText("80");
 			speed.setForeground(Color.WHITE);
@@ -484,7 +484,7 @@ public class GUI extends JFrame {
 		                                       main.start();
 		                                     }		                        
 		                           } else {
-										JOptionPane.showMessageDialog(M, "출발점이나 도착점이 설정되어 있지 않습니다,", "에러",
+										JOptionPane.showMessageDialog(M, "There is no starting point or destination set", "Error",
 												JOptionPane.ERROR_MESSAGE);
 										break;
 										// 출발점이나 도착점 둘중 하나라도 없으면 작동 불가능
@@ -493,7 +493,7 @@ public class GUI extends JFrame {
 								}
 								case 2: {
 									JOptionPane.showMessageDialog(M,
-											"경상대학교 자료구조 및 알고리즘 TA \n\n 알고리즘 구현 : 이영섭 \n GUI 제작 : 지평강 \n 여담이지만 다들 정말 고생했다... ", "제작자 정보",
+											"경상대학교 자료구조 및 알고리즘 TA \n\n Algoritm : 이영섭 \n GUI : 지평강 \n 여담이지만 다들 정말 고생했다... ", "Dev info",
 											JOptionPane.INFORMATION_MESSAGE);
 									break;
 								}
@@ -516,10 +516,10 @@ public class GUI extends JFrame {
 				buttons_BUI2[i].setBackground(Color.GRAY);
 				add(buttons_BUI2[i]);
 			}
-			buttons_BUI2[0].setText("맵 분석");
-			buttons_BUI2[1].setText("탐색 시작");
-			buttons_BUI2[2].setText("정보");
-			buttons_BUI2[3].setText("종료");
+			buttons_BUI2[0].setText("Analysis");
+			buttons_BUI2[1].setText("Search");
+			buttons_BUI2[2].setText("Info");
+			buttons_BUI2[3].setText("Exit");
 			buttons_BUI2[1].setEnabled(false);
 			for (int i = 0; i <= 3; i++) {
 				buttons_BUI2[i].setBorderPainted(false);

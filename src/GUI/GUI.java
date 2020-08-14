@@ -206,54 +206,54 @@ public class GUI extends JFrame {
 						for (int i = 0; i < buttons_BUI.length; i++) {
 							if (a.getSource() == buttons_BUI[i]) { // Mode변수를 이용하여 편집기의 모드를 조정하거나 빠져나갈 수 있음
 								switch (buttons_BUI[i].getText()) {
-								case "Specify a starting point": {
+								case "Making start point": {
 									MapEnable();
-									buttons_BUI[0].setText("End of Start Point Designation");
+									buttons_BUI[0].setText("Exit making start point");
 									buttons_BUI[1].setEnabled(false);
 									buttons_BUI[2].setEnabled(false);
 									buttons_BUI[3].setEnabled(false);
 									Mode = 1;
 									break;
 								}
-								case "End of Start Point Designation": {
+								case "Exit making start point": {
 									MapDisable();
-									buttons_BUI[0].setText("Specify a starting point");
+									buttons_BUI[0].setText("Making start point");
 									buttons_BUI[1].setEnabled(true);
 									buttons_BUI[2].setEnabled(true);
 									buttons_BUI[3].setEnabled(true);
 									Mode = 0;
 									break;
 								}
-								case "Specify a end point": {
+								case "Making end point": {
 									MapEnable();
-									buttons_BUI[1].setText("End of destination designation");
+									buttons_BUI[1].setText("Exit making end point");
 									buttons_BUI[0].setEnabled(false);
 									buttons_BUI[2].setEnabled(false);
 									buttons_BUI[3].setEnabled(false);
 									Mode = 2;
 									break;
 								}
-								case "End of destination designation": {
+								case "Exit making end point": {
 									MapDisable();
-									buttons_BUI[1].setText("Specify a end point");
+									buttons_BUI[1].setText("Making end point");
 									buttons_BUI[0].setEnabled(true);
 									buttons_BUI[2].setEnabled(true);
 									buttons_BUI[3].setEnabled(true);
 									Mode = 0;
 									break;
 								}
-								case "Wall designation": {
+								case "Making wall": {
 									MapEnable();
-									buttons_BUI[2].setText("End wall designation");
+									buttons_BUI[2].setText("Exit making wall");
 									buttons_BUI[0].setEnabled(false);
 									buttons_BUI[1].setEnabled(false);
 									buttons_BUI[3].setEnabled(false);
 									Mode = 3;
 									break;
 								}
-								case "End wall designation": {
+								case "Exit making wall": {
 									MapDisable();
-									buttons_BUI[2].setText("Wall designation");
+									buttons_BUI[2].setText("Making wall");
 									buttons_BUI[0].setEnabled(true);
 									buttons_BUI[1].setEnabled(true);
 									buttons_BUI[3].setEnabled(true);
@@ -278,9 +278,9 @@ public class GUI extends JFrame {
 									for (int x = 0; x < 3; x++) {
 										buttons_BUI[x].setEnabled(false);
 									}
-									buttons_BUI[0].setText("Specify a starting point");
-									buttons_BUI[1].setText("Specify a end point");
-									buttons_BUI[2].setText("Wall designation");
+									buttons_BUI[0].setText("Making start point");
+									buttons_BUI[1].setText("Making end point");
+									buttons_BUI[2].setText("Making wall");
 									buttons_BUI[3].setText("Start the editor");
 									Mode = 0;
 									break;
@@ -293,9 +293,9 @@ public class GUI extends JFrame {
 				buttons_BUI[i].setBackground(Color.GRAY);
 				add(buttons_BUI[i]);
 			}
-			buttons_BUI[0].setText("Specify a starting point");
-			buttons_BUI[1].setText("Specify a end point");
-			buttons_BUI[2].setText("Wall designation");
+			buttons_BUI[0].setText("Making start point");
+			buttons_BUI[1].setText("Making end point");
+			buttons_BUI[2].setText("Making wall");
 			buttons_BUI[3].setText("Start the editor");
 			for (int x = 0; x <= 3; x++) {
 				buttons_BUI[x].setEnabled(false);

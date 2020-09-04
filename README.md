@@ -40,7 +40,7 @@ JAVA with Swing framework
     - Before moving start point or end point, You need to remove existing start point or end point or cause error.
     - After editing map, click 'Exit the editor'.
 
-Video (CUI) : [Youtube](https://youtu.be/MhFao8uijY0, "Youtube video link")
+Video (CLI) : [Youtube](https://youtu.be/MhFao8uijY0, "Youtube video link")
 
 ## Screenshots
 

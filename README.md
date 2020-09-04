@@ -37,7 +37,7 @@ JAVA with Swing framework
   - After opening the map file, click on 'Start the editor' button
   
     - You can make start point, end point and wall
-    - Before moving start point or end point, You need to remove existing start point or end point or cause error.
+    - Before moving start point or end point, You need to remove existing start point or end point (click on existing point).
     - After editing map, click 'Exit the editor'.
 
 Video (CLI) : [Youtube](https://youtu.be/MhFao8uijY0 "Youtube video link")
